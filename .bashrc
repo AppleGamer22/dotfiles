@@ -36,11 +36,17 @@ updatePackages() {
 	sudo npm install -g npm
 	echo "$ sudo npm update -g"
 	sudo npm update -g
+	updateBrew
+	clear
+}
 
-	read -p "Would you like to update your Homebrew packages? y/n " input
-	case $input in
+updateBrew() {
+    echo "Would you like to update your Homebrew packages? [y/n]"
+	read -n 1 -p "Answer: " input
+    printf "\n"
+    case $input in
    	 	[yY])
-				echo "$ brew update"
+                echo "$ brew update"
 				brew update
 				echo "$ brew upgrade" 
 				brew upgrade
@@ -51,14 +57,10 @@ updatePackages() {
 				echo "$ brew doctor"
 				brew doctor
 		;;
-
-    [nN])
-       		;;
-
-    *)
-	echo "Invalid input..."
-	exit 1
-	;;
+    	[nN]);;
+		*)
+			updateBrew
+		;;
 	esac
 }
 
