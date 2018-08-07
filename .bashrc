@@ -1,3 +1,4 @@
+$ cat .bashrc 
 # Terminal command line style
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
@@ -30,12 +31,8 @@ alias brewUp='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 # Functions
 updatePackages() {
-	echo "$ sudo gem install cocoapods"
-	sudo gem install cocoapods
-	echo "$ sudo npm install -g npm"
-	sudo npm install -g npm
-	echo "$ sudo npm update -g"
-	sudo npm update -g
+	updatePod
+	updateNode
 	updateBrew
 	clear
 }
@@ -59,7 +56,46 @@ updateBrew() {
 		;;
     	[nN]);;
 		*)
+			clear
 			updateBrew
+		;;
+	esac
+}
+
+updatePod() {
+	echo "Would you like to update Cocoapods? [y/n]"
+	read -n 1 -p "Answer: " input
+    printf "\n"
+    case $input in
+   	 	[yY])
+                echo "$ sudo gem install cocoapods"
+				sudo gem install cocoapods
+		;;
+    	[nN]);;
+		*)
+			clear
+			updatePod
+		;;
+	esac
+}
+
+updateNode() {
+	echo "Would you like to update your Node.js + NPM packages? [y/n]"
+	read -n 1 -p "Answer: " input
+    printf "\n"
+    case $input in
+   	 	[yY])
+                echo "$ sudo n lts"
+				sudo n lts
+				echo "$ sudo npm install -g npm"
+				sudo npm install -g npm
+				echo "$ sudo npm update -g"
+				sudo npm update -g
+		;;
+    	[nN]);;
+		*)
+			clear
+			updateNode
 		;;
 	esac
 }
