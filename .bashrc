@@ -1,4 +1,3 @@
-$ cat .bashrc 
 # Terminal command line style
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
@@ -10,22 +9,26 @@ red=$(tput setaf 9);
 green=$(tput setaf 10);
 blue=$(tput setaf 12);
 yellow=$(tput setaf 11);
+cyan=$(tput setaf 14);
+pink=$(tput setaf 13);
 bold=$(tput bold);
 reset=$(tput sgr0);
 
-PS1="\[${red}\]\[${bold}\]\u\[${reset}\]"; #red color text user
-PS1+=" @ \[${green}\]\[${bold}\]\h"; #green color text host
-PS1+="\[${reset}\] : \[${blue}\]\[${bold}\]\w"; #blue color text full path
+PS1="\[${bold}\]\[${pink}\]\#.\[${red}\]\u\[${reset}\]";#user
+PS1+="@\[${green}\]\[${bold}\]\h";#host
+PS1+="\[${blue}\]\[${bold}\](\v)\[${reset}\]";#bash version
+PS1+="\[${yellow}\]\[${bold}\]\T";#time
+PS1+="\[${reset}\]:\[${cyan}\]\[${bold}\]\w";#full path
 PS1+="\[${reset}\]\n$ ";
-echo -e -n "\x1b[\x35 q" # changes to blinking bar
+echo -e -n "\x1b[\x35 q";#changes to blinking bar
 export PS1;
 
 # Aliases
 alias ls='ls -G'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
-# alias editBashProfile='sudo vi ~/.bash_profile'
-# alias editBashRC='sudo vi ~/.bashrc'
+alias cdOrderit-iOS='cd ~/Documents/Orderit\ Project/Orderit-iOS'
+alias cdOrderit-Web='cd ~/Documents/Orderit\ Project/Orderit-Web'
 alias editVimRC='sudo vi ~/.vimrc'
 alias brewUp='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
@@ -38,7 +41,7 @@ updatePackages() {
 }
 
 updateBrew() {
-    echo "Would you like to update your Homebrew packages? [y/n]"
+    echo "Update Homebrew packages? ([y/n], ^C to exit)"
 	read -n 1 -p "Answer: " input
     printf "\n"
     case $input in
@@ -63,7 +66,7 @@ updateBrew() {
 }
 
 updatePod() {
-	echo "Would you like to update Cocoapods? [y/n]"
+	echo "Update Cocoapods? ([y/n], ^C to exit)"
 	read -n 1 -p "Answer: " input
     printf "\n"
     case $input in
@@ -80,7 +83,7 @@ updatePod() {
 }
 
 updateNode() {
-	echo "Would you like to update your Node.js + NPM packages? [y/n]"
+	echo "Update Node.js & NPM packages? ([y/n], ^C to exit)"
 	read -n 1 -p "Answer: " input
     printf "\n"
     case $input in
