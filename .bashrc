@@ -14,35 +14,44 @@ pink=$(tput setaf 13);
 bold=$(tput bold);
 reset=$(tput sgr0);
 
-PS1="\[${bold}\]\[${pink}\]\#.\[${red}\]\u\[${reset}\]";#user
+PS1="\n\[${bold}\]\[${pink}\]\#.\[${red}\]\u\[${reset}\]";#user
 PS1+="@\[${green}\]\[${bold}\]\h";#host
-PS1+="\[${blue}\]\[${bold}\](\v)\[${reset}\]";#bash version
-PS1+="\[${yellow}\]\[${bold}\]\T";#time
-PS1+="\[${reset}\]:\[${cyan}\]\[${bold}\]\w";#full path
+# PS1+="\[${blue}\]\[${bold}\](\v)\[${reset}\]";#bash version
+PS1+="\[${blue}\]\[${bold}\](\T)";#time
+PS1+="\[${reset}\]:\[${yellow}\]\[${bold}\]\w";#full path
 PS1+="\[${reset}\]\n$ ";
 echo -e -n "\x1b[\x35 q";#changes to blinking bar
 export PS1;
 
 # Aliases
 alias ls='ls -G'
+alias la='ls -AlhF'
+alias rm='rm -i'
+alias df='df -h'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 alias cdOrderit-iOS='cd ~/Documents/Orderit\ Project/Orderit-iOS'
-alias cdOrderit-Web='cd ~/Documents/Orderit\ Project/Orderit-Web'
+alias cdOrderit-Ionic='cd ~/Documents/Orderit\ Project/Orderit-Ionic'
+alias cdOrderit-Server='cd ~/Documents/Orderit\ Project/Orderit-Server'
 alias editVimRC='sudo vi ~/.vimrc'
 alias brewUp='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias initXC='swift package generate-xcodeproj'
+alias docker-prune='docker system prune -a'
+alias expressConnect='docker exec -it express /bin/bash'
+
+export PATH=/Users/applegamer22/Documents/Orderit\ Project/Orderit-Server/MongoDB/bin:$PATH
 
 # Functions
 updatePackages() {
 	updatePod
 	updateNode
+	updateGCP
 	updateBrew
-	clear
+	#clear
 }
 
 updateBrew() {
-    echo "Update Homebrew packages? ([y/n], ^C to exit)"
-	read -n 1 -p "Answer: " input
+	read -n 1 -p "Do you want to update Homebrew packages? ([y/n], ^C to exit): " input
     printf "\n"
     case $input in
    	 	[yY])
@@ -50,8 +59,8 @@ updateBrew() {
 				brew update
 				echo "$ brew upgrade" 
 				brew upgrade
-				echo "$ brew prune" 
-				brew prune 
+				# echo "$ brew prune" 
+				# brew prune 
 				echo "$ brew cleanup" 
 				brew cleanup
 				echo "$ brew doctor"
@@ -66,8 +75,7 @@ updateBrew() {
 }
 
 updatePod() {
-	echo "Update Cocoapods? ([y/n], ^C to exit)"
-	read -n 1 -p "Answer: " input
+	read -n 1 -p "Do you want to update Cocoapods? ([y/n], ^C to exit): " input
     printf "\n"
     case $input in
    	 	[yY])
@@ -83,15 +91,14 @@ updatePod() {
 }
 
 updateNode() {
-	echo "Update Node.js & NPM packages? ([y/n], ^C to exit)"
-	read -n 1 -p "Answer: " input
+	read -n 1 -p "Do you want to update Node.js & NPM packages? ([y/n], ^C to exit): " input
     printf "\n"
     case $input in
    	 	[yY])
                 echo "$ sudo n lts"
 				sudo n lts
-				echo "$ sudo npm install -g npm"
-				sudo npm install -g npm
+				#echo "$ sudo npm install -g npm"
+				#sudo npm install -g npm
 				echo "$ sudo npm update -g"
 				sudo npm update -g
 		;;
@@ -99,6 +106,22 @@ updateNode() {
 		*)
 			clear
 			updateNode
+		;;
+	esac
+}
+
+updateGCP() {
+	read -n 1 -p "Do you want to update Google Cloud Platform CLI? ([y/n], ^C to exit): " input
+    printf "\n"
+    case $input in
+   	 	[yY])
+                echo "$ gcloud components update"
+				gcloud components update
+		;;
+    	[nN]);;
+		*)
+			clear
+			updateGCP
 		;;
 	esac
 }
@@ -121,7 +144,7 @@ decrypt() {
 	openssl enc -aes-256-cbc -d -in "$1" -out "$2"
 }
 
-vscode() {
+code() {
 	open "$1" -a "Visual Studio Code"
 }
 
@@ -130,8 +153,4 @@ editBashRC() {
 	sudo vi ~/.bashrc
 	echo "$ source ~/.bashrc"
 	source ~/.bashrc
-}
-
-vscode() {
-	open "$1" -a "Visual Studio Code"
 }
