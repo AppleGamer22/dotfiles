@@ -1,9 +1,7 @@
-# Terminal command line style
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-	export TERM='gnome-256color';
-elif infocmp xterm-256color >/dev/null 2>&1; then
-	export TERM='xterm-256color';
-fi;
+defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE
+defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
+defaults write com.apple.screencapture type JPG
+# sudo hostname macOS
 
 red=$(tput setaf 9);
 green=$(tput setaf 10);
