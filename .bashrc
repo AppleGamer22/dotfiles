@@ -1,6 +1,7 @@
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE
 defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.screencapture type JPG
+defaults write com.apple.screencapture disable-shadow -bool true ; killall SystemUIServer
 # sudo hostname macOS
 
 red=$(tput setaf 9);
