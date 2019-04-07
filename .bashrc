@@ -94,8 +94,8 @@ updateNode() {
 	printf "\n"
 	case $input in
 		[yY])
-				echo "$ n lts"
-				n lts
+				echo "$ sudo n lts"
+				sudo n lts
 				echo "$ sudo n prune"
 				sudo n prune
 				echo "$ sudo npm update -g"
