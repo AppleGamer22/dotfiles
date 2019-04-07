@@ -51,10 +51,10 @@ updatePackages() {
 
 updateBrew() {
 	read -n 1 -p "Do you want to update Homebrew packages? ([y/n], ^C to exit): " input
-    printf "\n"
-    case $input in
-   	 	[yY])
-                echo "$ brew update"
+	printf "\n"
+	case $input in
+			[yY])
+				echo "$ brew update"
 				brew update
 				echo "$ brew upgrade" 
 				brew upgrade
@@ -65,7 +65,7 @@ updateBrew() {
 				echo "$ brew doctor"
 				brew doctor
 		;;
-    	[nN]);;
+		[nN]);;
 		*)
 			clear
 			updateBrew
@@ -75,13 +75,13 @@ updateBrew() {
 
 updatePod() {
 	read -n 1 -p "Do you want to update Cocoapods? ([y/n], ^C to exit): " input
-    printf "\n"
-    case $input in
-   	 	[yY])
-                echo "$ sudo gem install cocoapods"
+	printf "\n"
+	case $input in
+		[yY])
+				echo "$ sudo gem install cocoapods"
 				sudo gem install cocoapods
 		;;
-    	[nN]);;
+		[nN]);;
 		*)
 			clear
 			updatePod
@@ -91,17 +91,17 @@ updatePod() {
 
 updateNode() {
 	read -n 1 -p "Do you want to update Node.js & NPM packages? ([y/n], ^C to exit): " input
-    printf "\n"
-    case $input in
-   	 	[yY])
-                echo "$ sudo n lts"
-				sudo n lts
-				#echo "$ sudo npm install -g npm"
-				#sudo npm install -g npm
+	printf "\n"
+	case $input in
+		[yY])
+				echo "$ n lts"
+				n lts
+				echo "$ sudo n prune"
+				sudo n prune
 				echo "$ sudo npm update -g"
 				sudo npm update -g
 		;;
-    	[nN]);;
+		[nN]);;
 		*)
 			clear
 			updateNode
@@ -113,11 +113,11 @@ updateGCP() {
 	read -n 1 -p "Do you want to update Google Cloud Platform CLI? ([y/n], ^C to exit): " input
     printf "\n"
     case $input in
-   	 	[yY])
-                echo "$ gcloud components update"
+		[yY])
+				echo "$ gcloud components update"
 				gcloud components update
 		;;
-    	[nN]);;
+		[nN]);;
 		*)
 			clear
 			updateGCP
