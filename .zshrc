@@ -139,6 +139,7 @@ plugins=(
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+# xcode-select --install
 alias editZshRC="sudo vi ~/.zshrc"
 alias ohmyzsh="sudo vi ~/.oh-my-zsh"
 alias ls='ls -G'
