@@ -1,3 +1,12 @@
+# Git
+# xcode-select --install
+git config --global user.name "Omri Bornstein"
+git config --global user.email omribor@gmail.com
+git config --global core.editor vscode
+git config --global color.status auto
+git config --global color.branch auto
+git config --global color.interactive auto
+git config --global color.diff auto
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
@@ -139,7 +148,6 @@ plugins=(
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# xcode-select --install
 alias editZshRC="sudo vi ~/.zshrc"
 alias ohmyzsh="sudo vi ~/.oh-my-zsh"
 alias ls='ls -G'
