@@ -159,6 +159,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias editVimRC='sudo vi ~/.vimrc'
 # alias brewUp='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias initXC='swift package generate-xcodeproj'
+alias gitkraken='git log --graph --decorate --oneline'
 
 # Functions
 function updatePackages() {
