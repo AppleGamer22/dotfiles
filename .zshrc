@@ -2,7 +2,7 @@
 # xcode-select --install
 git config --global user.name "Omri Bornstein"
 git config --global user.email omribor@gmail.com
-git config --global core.editor vscode
+git config --global core.editor vim
 git config --global color.status auto
 git config --global color.branch auto
 git config --global color.interactive auto
