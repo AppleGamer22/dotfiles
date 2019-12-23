@@ -150,6 +150,7 @@ plugins=(
 # Example aliases
 alias editZshRC="sudo vi ~/.zshrc"
 alias ohmyzsh="sudo vi ~/.oh-my-zsh"
+alias clear="printf '\33c\e[3J'"
 alias ls='ls -G'
 alias la='ls -AlhF'
 alias rm='rm -i'
