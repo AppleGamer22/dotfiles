@@ -12,6 +12,7 @@ defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.screencapture type JPG
 defaults write com.apple.screencapture disable-shadow -bool true ; killall SystemUIServer
 # sudo hostname macOS
+# sudo scutil --set HostName macO
 #changes to blinking bar
 #export PS1="%10F%m%f:%11F%1~%f \$ "
 echo -e -n "\x1b[\x35 q";
