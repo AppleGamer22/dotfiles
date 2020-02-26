@@ -11,6 +11,9 @@ git config --global color.diff auto
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
+source ~/.config/history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 eval "$(starship init zsh)"
 
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE
