@@ -10,6 +10,9 @@ git config --global color.diff auto
 
 autoload -Uz compinit
 compinit
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 zstyle ':completion:*' menu select
 source ~/.config/history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
