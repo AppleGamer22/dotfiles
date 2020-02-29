@@ -12,6 +12,8 @@ autoload -Uz compinit
 compinit
 HISTSIZE=1000
 SAVEHIST=1000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 HISTFILE=~/.zsh_history
 zstyle ':completion:*' menu select
 source ~/.config/history-substring-search.zsh
