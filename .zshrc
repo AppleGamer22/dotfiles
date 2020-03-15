@@ -1,7 +1,7 @@
 # xcode-select --install
 # Git
-git config --global user.name "Omri Bornstein"
-git config --global user.email omribor@gmail.com
+git config --global user.name "<your_name>"
+git config --global user.email <your_email>
 git config --global core.editor vim
 git config --global color.status auto
 git config --global color.branch auto
@@ -21,7 +21,7 @@ source ~/.config/history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 eval "$(starship init zsh)"
-
+#for macOS
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE
 defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.screencapture type JPG
@@ -30,6 +30,7 @@ defaults write com.apple.screencapture disable-shadow -bool true ; killall Syste
 # sudo scutil --set HostName macOS
 #changes to blinking bar
 #export PS1="%10F%m%f:%11F%1~%f \$ "
+# general
 echo -e -n "\x1b[\x35 q";
 touch ~/.hushlogin
 alias editZSHRC="sudo vi ~/.zshrc"
