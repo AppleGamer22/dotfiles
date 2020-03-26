@@ -27,10 +27,10 @@ defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.screencapture type JPG
 defaults write com.apple.screencapture disable-shadow -bool true ; killall SystemUIServer
 # sudo hostname macOS
+# compaudit | xargs sudo chmod g-w
 # sudo scutil --set HostName macOS
 #changes to blinking bar
 #export PS1="%10F%m%f:%11F%1~%f \$ "
-# general
 echo -e -n "\x1b[\x35 q";
 touch ~/.hushlogin
 alias editZSHRC="sudo vi ~/.zshrc"
@@ -44,6 +44,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias editVimRC='sudo vi ~/.vimrc'
 alias initXC='swift package generate-xcodeproj'
 alias gitkraken='git log --graph --decorate --oneline'
+alias python='python3'
 
 function updatePod() {
 	read "input?Update Cocoapods? ([y/n], ^C to exit): "
