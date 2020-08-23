@@ -12,6 +12,7 @@ prompt_order = [
 	"python",
 	"java",
 	"line_break",
+	"cmd_duration",
 	"character",
 ]
 add_newline = false
