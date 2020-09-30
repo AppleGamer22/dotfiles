@@ -1,34 +1,40 @@
-prompt_order = [
-	"time",
-	"username",
-	"hostname",
-	"directory",
-	"git_branch",
-	"git_commit",
-	"git_state",
-	"git_status",
-	"package",
-	"nodejs",
-	"python",
-	"java",
-	"line_break",
-	"cmd_duration",
-	"character",
-]
+format = """\
+	$time\
+	$username\
+	$hostname\
+	$directory\
+	$git_branch\
+	$git_commit\
+	$git_state\
+	$git_status\
+	$package\
+	$nodejs\
+	$python\
+	$java\
+	$line_break\
+	$cmd_duration\
+	$character\
+"""
 add_newline = false
 [time]
+format = "[$time]($style) "
 disabled = false
 show_always = true
 use_12hr = true
 style = "blue bold"
 [character]
-symbol = "$ "
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red) "
+[cmd_duration]
+format = "[$duration](bold yellow) "
 [hostname]
+format = "on [$hostname]($style) "
 ssh_only = false
 disabled = false
 style = "green bold"
 show_always = true
 [username]
+format = "via [$user]($style) "
 disabled = false
 show_always = true
 style_user = "red bold"
