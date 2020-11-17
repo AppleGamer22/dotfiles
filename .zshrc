@@ -24,6 +24,8 @@ bindkey '^[[B' history-substring-search-down
 
 eval "$(starship init zsh)"
 source <(kubectl completion zsh)
+source <(npm completion)
+eval "`pip3 completion --bash`"
 eval "$(pipenv --completion)"
 
 #for macOS
