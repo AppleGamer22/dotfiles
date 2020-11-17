@@ -21,7 +21,11 @@ zstyle ':completion:*' menu select
 source ~/.config/history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
 eval "$(starship init zsh)"
+source <(kubectl completion zsh)
+eval "$(pipenv --completion)"
+
 #for macOS
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE
 defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
