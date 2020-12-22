@@ -42,7 +42,7 @@ echo -e -n "\x1b[\x35 q";
 touch ~/.hushlogin
 alias editZSHRC="sudo vi ~/.zshrc"
 alias clear="printf '\33c\e[3J'"
-alias ls='ls -G'
+alias ls='ls --color'
 alias la='ls -AlhF'
 alias rm='rm -i'
 alias df='df -h'
