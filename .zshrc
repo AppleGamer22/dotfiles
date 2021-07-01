@@ -72,6 +72,7 @@ function set_defaults() {
 	npm config set init-author-url "https://applegamer22.hashnode.dev" -g
 	npm config set init-license "GPL-3.0-only" -g
 }
+alias set_defaults='sudo zsh -c "$(declare -f set_defaults); set_defaults"'
 
 # export OMPOSE_DOCKER_CLI_BUILD=1
 # export DOCKER_BUILDKIT=1
