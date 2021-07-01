@@ -37,7 +37,7 @@ function set_aliases() {
 		alias ls='ls --color'
 		alias open='xdg-open $1 2> /dev/null'
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
-		alias ls='ls --G'
+		alias ls='ls -G'
 	fi
 	alias clear="printf '\33c\e[3J'"
 	alias la='ls -AlhF'
