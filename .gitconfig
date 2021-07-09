@@ -1,0 +1,12 @@
+[user]
+        name = Omri Bornstein
+        email = omribor@gmail.com
+[credential]
+        helper = store
+[core]
+        editor = nano
+[color]
+        status = auto
+        branch = auto
+        interactive = auto
+        diff = auto
