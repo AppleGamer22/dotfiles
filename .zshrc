@@ -35,13 +35,14 @@ function set_completions() {
 function set_aliases() {
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		alias ls='ls --color'
+		alias rm='rm -iI --preserve-root'
 		alias open='xdg-open $1 2> /dev/null'
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		alias ls='ls -G'
+		alias rm='rm -i --preserve-root'
 	fi
 	alias clear="printf '\33c\e[3J'"
 	alias la='ls -AlhF'
-	alias rm='rm -iI --preserve-root'
 	alias mv='mv -i'
 	alias cp='cp -i'
 	alias ln='ln -i'
