@@ -43,6 +43,7 @@ function set_aliases() {
 	fi
 	alias clear="printf '\33c\e[3J'"
 	alias la='ls -AlhF'
+	alias lh='ls -lhF'
 	alias mv='mv -i'
 	alias cp='cp -i'
 	alias ln='ln -i'
