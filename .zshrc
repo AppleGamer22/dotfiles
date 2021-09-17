@@ -39,7 +39,7 @@ function set_aliases() {
 		alias open='xdg-open $1 2> /dev/null'
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		alias ls='ls -G'
-		alias rm='rm -i --preserve-root'
+		alias rm='rm -i'
 	fi
 	alias clear="printf '\33c\e[3J'"
 	alias la='ls -AlhF'
