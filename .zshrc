@@ -65,6 +65,9 @@ function set_zsh() {
 function set_completions() {
 	source <(kubectl completion zsh)
 	source <(kompose completion zsh)
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		complete -o nospace -C /usr/local/bin/terraform terraform
+	fi
 	# source <(kubeadm completion zsh)
 	# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# 	source <(k3d completion zsh)
