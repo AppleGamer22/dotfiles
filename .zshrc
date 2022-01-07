@@ -104,6 +104,11 @@ function set_aliases() {
 	alias gitkraken='git log --graph --decorate --oneline'
 }
 
+function incognito() {
+	unsetopt INC_APPEND_HISTORY
+	unsetopt SHARE_HISTORY
+}
+
 function set_defaults() {
 	git config --global user.name "Omri Bornstein"
 	git config --global user.email "omribor@gmail.com"
