@@ -7,6 +7,13 @@ function set_zsh() {
 		source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 		FPATH=/usr/local/share/zsh-completions:$FPATH
 	fi
+	export LESS_TERMCAP_mb=$'\E[1;31m'
+	export LESS_TERMCAP_md=$'\E[1;36m'
+	export LESS_TERMCAP_me=$'\E[0m'
+	export LESS_TERMCAP_so=$'\E[01;33m'
+	export LESS_TERMCAP_se=$'\E[0m'
+	export LESS_TERMCAP_us=$'\E[1;32m'
+	export LESS_TERMCAP_ue=$'\E[0m'
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 	ZSH_HIGHLIGHT_STYLES[default]=none
 	ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
