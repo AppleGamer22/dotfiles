@@ -59,6 +59,7 @@ function set_zsh() {
 	setopt HIST_IGNORE_ALL_DUPS
 	setopt HIST_SAVE_NO_DUPS
 	setopt HIST_REDUCE_BLANKS
+	setopt HIST_IGNORE_SPACE
 	HISTFILE=~/.zsh_history
 	zstyle ':completion:*' menu select
 	bindkey '^[[A' history-substring-search-up
