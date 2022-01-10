@@ -107,11 +107,7 @@ function set_aliases() {
 	alias fgrep='fgrep --color=auto'
 	alias bc='bc -l'
 	alias gitkraken='git log --graph --decorate --oneline'
-}
-
-function incognito() {
-	unsetopt INC_APPEND_HISTORY
-	unsetopt SHARE_HISTORY
+	alias incognito=' unset HISTFILE'
 }
 
 function set_defaults() {
