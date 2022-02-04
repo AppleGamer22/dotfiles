@@ -75,7 +75,7 @@ function set_zsh() {
 	echo -e -n "\x1b[\x35 q";
 }
 function set_completions() {
-	source <(kubectl completion zsh)
+	# source <(kubectl completion zsh)
 	source <(kompose completion zsh)
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		complete -o nospace -C /usr/local/bin/terraform terraform
