@@ -3,7 +3,11 @@
 	email = omribor@gmail.com
 [credential]
 	helper = store
+[commit]
+	gpgSign = true
 [tag]
+	gpgSign = true
+[push]
 	gpgSign = true
 [core]
 	editor = nano
