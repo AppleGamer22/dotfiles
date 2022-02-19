@@ -1,12 +1,14 @@
 [user]
-        name = Omri Bornstein
-        email = omribor@gmail.com
+	name = Omri Bornstein
+	email = omribor@gmail.com
 [credential]
-        helper = store
+	helper = store
+[tag]
+	gpgSign = true
 [core]
-        editor = nano
+	editor = nano
 [color]
-        status = auto
-        branch = auto
-        interactive = auto
-        diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
