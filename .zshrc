@@ -98,8 +98,10 @@ function set_aliases() {
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		alias ls='ls -G'
 		alias rm='rm -i'
-		alias python='python3'
-		alias pip='pip3'
+		alias python="$(brew --prefix)/bin/python3"
+		alias python3="$(brew --prefix)/bin/python3"
+		alias pip="$(brew --prefix)/bin/pip3"
+		alias pip3="$(brew --prefix)/bin/pip3"
 	fi
 	alias clear="printf '\33c\e[3J'"
 	alias la='ls -AlhF'
