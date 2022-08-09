@@ -72,6 +72,7 @@ function set_zsh() {
 	bindkey '^[[A' history-substring-search-up
 	bindkey '^[[B' history-substring-search-down
 	touch ~/.hushlogin
+	tabs -4
 	echo -e -n "\x1b[\x35 q";
 }
 function set_completions() {
