@@ -8,6 +8,7 @@ function set_zsh() {
 		FPATH="$(brew --prefix)/share/zsh/site-functions:/usr/local/share/zsh-completions:${FPATH}"
 		PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 		PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+		PATH="/usr/local/opt/gnu-time/libexec/gnubin:$PATH"
 	fi
 	export LESS_TERMCAP_mb=$'\E[1;31m'
 	export LESS_TERMCAP_md=$'\E[1;36m'
