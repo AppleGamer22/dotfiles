@@ -6,9 +6,9 @@ function set_zsh() {
 		source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 		FPATH="$(brew --prefix)/share/zsh/site-functions:/usr/local/share/zsh-completions:${FPATH}"
-		PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-		PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-		PATH="/usr/local/opt/gnu-time/libexec/gnubin:$PATH"
+		PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+		PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+		PATH="$(brew --prefix)/opt/gnu-time/libexec/gnubin:$PATH"
 	fi
 	export LESS_TERMCAP_mb=$'\E[1;31m'
 	export LESS_TERMCAP_md=$'\E[1;36m'
