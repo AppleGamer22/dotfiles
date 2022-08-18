@@ -99,6 +99,7 @@ function set_aliases() {
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
 		alias ls='ls -G'
 		alias rm='rm -i'
+		alias tar='gtar'
 		alias python="$(brew --prefix)/bin/python3"
 		alias python3="$(brew --prefix)/bin/python3"
 		alias pip="$(brew --prefix)/bin/pip3"
