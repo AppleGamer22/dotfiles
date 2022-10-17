@@ -73,6 +73,9 @@ function set_zsh() {
 	setopt HIST_IGNORE_SPACE
 	HISTFILE=~/.zsh_history
 	zstyle ':completion:*' menu select
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'clean-diff'
+	fi
 	bindkey '^[[A' history-substring-search-up
 	bindkey '^[[B' history-substring-search-down
 	touch ~/.hushlogin
