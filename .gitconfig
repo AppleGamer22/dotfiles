@@ -7,8 +7,8 @@
 	gpgSign = true
 [tag]
 	gpgSign = true
-# [push]
-# 	gpgSign = true
+[push]
+ 	autoSetupRemote = true
 [core]
 	editor = nano
 [color]
