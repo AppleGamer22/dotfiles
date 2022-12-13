@@ -88,12 +88,12 @@ function set_completions() {
 	source <(kompose completion zsh)
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		complete -o nospace -C /usr/local/bin/terraform terraform
-	fi
-	# source <(kubeadm completion zsh)
-	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		source /usr/local/etc/bash_completion.d/az
+	elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		# source <(k3d completion zsh)
 		source /etc/bash_completion.d/azure-cli
 	fi
+	# source <(kubeadm completion zsh)
 	# source <(kubelet completion zsh)
 	source <(npm completion)
 	eval "`pip completion --bash`"
