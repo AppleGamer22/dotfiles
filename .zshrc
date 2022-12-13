@@ -61,8 +61,8 @@ function set_zsh() {
 	ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
 	ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
 	ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
-	autoload -Uz compinit
-	compinit -i
+	autoload -Uz compinit && compinit -i
+	autoload -Uz bashcompinit && bashcompinit -i
 	HISTSIZE=1000
 	SAVEHIST=1000
 	setopt INC_APPEND_HISTORY
@@ -90,9 +90,10 @@ function set_completions() {
 		complete -o nospace -C /usr/local/bin/terraform terraform
 	fi
 	# source <(kubeadm completion zsh)
-	# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	# 	source <(k3d completion zsh)
-	# fi
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		# source <(k3d completion zsh)
+		source /etc/bash_completion.d/azure-cli
+	fi
 	# source <(kubelet completion zsh)
 	source <(npm completion)
 	eval "`pip completion --bash`"
