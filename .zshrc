@@ -88,7 +88,7 @@ function set_completions() {
 	source <(kompose completion zsh)
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		complete -o nospace -C /usr/local/bin/terraform terraform
-		source /usr/local/etc/bash_completion.d/az
+		source $(brew --prefix)/etc/bash_completion.d/az
 	elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		# source <(k3d completion zsh)
 		source /etc/bash_completion.d/azure-cli
